@@ -1,6 +1,7 @@
 import Profile from './Profile/Profile';
 import person from '../data/user';
-console.log(person);
+import data from '../data/data';
+import Statistics from './Statistics/Statistics';
 
 export const App = () => {
   return (
@@ -21,6 +22,8 @@ export const App = () => {
         location={person.location}
         stats={person.stats}
       />
+      {/* <Statistics title="Upload stats" stats={data} />
+      <Statistics stats={data} /> */}
     </div>
   );
 };
