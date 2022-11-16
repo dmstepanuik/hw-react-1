@@ -3,7 +3,7 @@ import s from './Profile.module.css';
 
 export default function Profile(props) {
   const { username, tag, location, avatar, stats } = props;
-  console.log({ username, tag, location, avatar, stats });
+  // console.log({ username, tag, location, avatar, stats });
   return (
     <div className={s.profile}>
       <div className={s.description}>

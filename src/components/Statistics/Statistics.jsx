@@ -1,30 +1,19 @@
 import React from 'react';
 import s from './Statistics.module.css';
 
-export default function Statistics(props) {
-  const { title, stats } = props;
-  console.log({ title, stats });
+export default function Statistics({ title, stats }) {
+  console.log(title, stats);
   return (
-    <section class="statistics">
-      <h2 class="title">Upload stats</h2>
+    <section className={s.statistics}>
+      {title && <h2 className={s.title}>{title}</h2>}
 
-      <ul class="stat-list">
-        <li class="item">
-          <span class="label">.docx</span>
-          <span class="percentage">4%</span>
-        </li>
-        <li class="item">
-          <span class="label">.mp3</span>
-          <span class="percentage">14%</span>
-        </li>
-        <li class="item">
-          <span class="label">.pdf</span>
-          <span class="percentage">41%</span>
-        </li>
-        <li class="item">
-          <span class="label">.mp4</span>
-          <span class="percentage">12%</span>
-        </li>
+      <ul className={s.statList}>
+        {stats.map(stat => (
+          <li className={s.item} key={stat.id}>
+            <span className={s.label}>{stat.label}</span>
+            <span className={s.percentage}>{stat.percentage}</span>
+          </li>
+        ))}
       </ul>
     </section>
   );

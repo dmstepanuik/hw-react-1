@@ -2,19 +2,11 @@ import Profile from './Profile/Profile';
 import person from '../data/user';
 import data from '../data/data';
 import Statistics from './Statistics/Statistics';
+import s from './App.module.css';
 
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
+    <div className={s.container}>
       <Profile
         avatar={person.avatar}
         username={person.username}
@@ -22,8 +14,8 @@ export const App = () => {
         location={person.location}
         stats={person.stats}
       />
-      {/* <Statistics title="Upload stats" stats={data} />
-      <Statistics stats={data} /> */}
+      <Statistics title="Upload stats" stats={data} />
+      <Statistics stats={data} />
     </div>
   );
 };
